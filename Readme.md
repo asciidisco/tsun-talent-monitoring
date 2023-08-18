@@ -159,30 +159,30 @@ The data should be in this format, given you have 1 power station, 1 inverter & 
 ```yml
 version: "3.9"
 services:
-	solarmonitor:
-		container_name: "talent-monitoring"
-		image: "asciidisco/talent-monitoring:2023.8"
-		ports:
-			- "3000:3000/tcp"
-		restart: "unless-stopped"
-		environment:
-			TZ: "Europe/Berlin"
-			API_USERNAME: "$YOUR_TALENT_MONITORING_COM_USERNAME"
-			API_PASSWORD: "$YOUR_TALENT_MONITORING_COM_PASSWORD"
-			REST_ENABLED: true
-			PROMETHEUS_ENABLED: true
-			MQTT_ENABLED: true
-			MQTT_HOST: "$YOUR_MQTT_BROKER_HOST"
-			MQTT_USERNAME: "$YOUR_MQTT_BROKER_USERNAME"
-			MQTT_PASSWORD: "$YOUR_MQTT_BROKER_PASSWORD"
-			DEVICE_PANEL_MANUFACTURER: "$YOUR_SOLAR_PANEL_MANUFACTURER"
-			DEVICE_PANEL_MODEL: "$YOUR_SOLAR_PANEL_MODEL"
-		healthcheck:
-			test: curl --fail http://localhost:3000/health || exit 1
-			interval: 60s
-			retries: 5
-			start_period: 20s
-			timeout: 10s
+  solarmonitor:
+    container_name: "talent-monitoring"
+    image: "asciidisco/talent-monitoring:2023.8"
+    ports:
+      - "3000:3000/tcp"
+    restart: "unless-stopped"
+    environment:
+      TZ: "Europe/Berlin"
+      API_USERNAME: "$YOUR_TALENT_MONITORING_COM_USERNAME"
+      API_PASSWORD: "$YOUR_TALENT_MONITORING_COM_PASSWORD"
+      REST_ENABLED: true
+      PROMETHEUS_ENABLED: true
+      MQTT_ENABLED: true
+      MQTT_HOST: "$YOUR_MQTT_BROKER_HOST"
+      MQTT_USERNAME: "$YOUR_MQTT_BROKER_USERNAME"
+      MQTT_PASSWORD: "$YOUR_MQTT_BROKER_PASSWORD"
+      DEVICE_PANEL_MANUFACTURER: "$YOUR_SOLAR_PANEL_MANUFACTURER"
+      DEVICE_PANEL_MODEL: "$YOUR_SOLAR_PANEL_MODEL"
+    healthcheck:
+      test: curl --fail http://localhost:3000/health || exit 1
+      interval: 60s
+      retries: 5
+      start_period: 20s
+      timeout: 10s
 ```
 
 ### Node.js

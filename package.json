@@ -1,0 +1,19 @@
+{
+  "name": "talent-monitoring",
+  "version": "1.0.0",
+  "description": "Talent solar panel & inverter API access / data transformation",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sebastian Golasch <npm@asciidisco.com>",
+  "license": "MIT",
+  "dependencies": {
+    "fastify": "4.21.0",
+    "fastify-healthcheck": "4.4.0",
+    "fastify-metrics": "10.3.0",
+    "mqtt": "5.0.2",
+    "pino": "8.15.0"
+  }
+}
